@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Webpage</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('hmbg2.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Navigation Bar */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #001C30;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  padding: 5px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover, .dropdown:hover .dropbtn {
+  background-color: #64CCC5;
+  transform: translateY(-3px);
+}
+
+nav ul .logo-container img {
+  height: 40px;
+}
+
+nav ul li.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+nav .dropdown-content a {
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+nav .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+a:hover {
+  color: #FFD700;
+}
+
+/* Boxes Section */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 100px 20px 40px;
+}
+
+.box {
+  position: relative;
+  width: 250px;
+  height: 310px;
+  background-size: cover;
+  margin: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay color */
+  transition: opacity 0.3s ease;
+}
+
+.box:hover:before {
+  opacity: 0; /* Remove dark overlay on hover */
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Centered Content */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.center p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Footer */
+footer {
+  background-color: #001C30;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    margin: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li class="logo-container"><a href="Homepage.html"><img src="logo.png" alt="Logo"></a></li>
+    <li><a href="UserProfile.html">Profile</a></li>
+    <li><a href="Homepage.html">Home</a></li>
+    <li><a href="Grades.html">Grade Calculator</a></li>
+    <li><a href="About.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <!-- Boxes Section -->
+  <div class="container">
+    <div class="box" style="background-image: url('1.JPG');"></div>
+    <div class="box" style="background-image: url('2.JPG');"></div>
+    <div class="box" style="background-image: url('3.JPG');"></div>
+  </div>
+
+  <!-- Centered Content -->
+  <div class="center">
+    <p>Explore More of Our Courses!</p>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Diliman college. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

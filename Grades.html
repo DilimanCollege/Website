@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('gradesbg.JPG');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #001C30;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 6px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover, .dropdown:hover .dropbtn {
+  background-color: #64CCC5;
+}
+
+nav ul .logo-container {
+  margin-right: auto;
+}
+
+nav ul .logo-container img {
+  height: 40px;
+}
+
+nav ul li.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+nav .dropdown-content a {
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+nav .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+a:hover {
+  color: #FFD700;
+}
+
+/* Grade Calculator Styles */
+input {
+  width: 275px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  margin: 10px 0;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li class="logo-container"><a href="Homepage.html"><img src="logo.png" alt="Logo"></a></li>
+    <li><a href="UserProfile.html">Profile</a></li>
+    <li><a href="Homepage.html">Home</a></li>
+    <li><a href="Grades.html">Grade Calculator</a></li>
+    <li><a href="About.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<div style="margin-top: 100px;">
+  <h1>Diliman College Grade Calculator</h1>
+  <form onsubmit="return false;">
+      Name: <br />
+      <input id="name" type="text"><br /><br />
+
+      1st Quarter: <br />
+      <input id="quarter1" type="number"><br /><br />
+     
+      2nd Quarter: <br />
+      <input id="quarter2" type="number"><br /><br />
+     
+      3rd Quarter: <br />
+      <input id="quarter3" type="number"><br /><br />
+     
+      4th Quarter: <br />
+      <input id="quarter4" type="number"><br /><br />
+     
+      <b>FINAL GRADE: </b><br />
+      <input id="finalGrade" type="text" style="background-color: lightgray;" readonly><br /><br />
+     
+      <b>REMARK: </b><br />
+      <input id="remark" type="text" style="background-color: lightgray;" readonly><br /><br /><br />
+     
+      <input type="submit" value="COMPUTE" onclick="compute()">
+  </form>
+</div>
+
+<script type="text/javascript">
+  function compute() {
+    var name = document.getElementById("name").value;
+    var quarter1 = parseInt(document.getElementById("quarter1").value);
+    var quarter2 = parseInt(document.getElementById("quarter2").value);
+    var quarter3 = parseInt(document.getElementById("quarter3").value);
+    var quarter4 = parseInt(document.getElementById("quarter4").value);
+
+    var sum = quarter1 + quarter2 + quarter3 + quarter4;
+    var average = sum / 4;
+    
+    document.getElementById("finalGrade").value = average;
+
+    if (average >= 75) {
+        document.getElementById("remark").value = name + " PASSED!";
+    } else {
+        document.getElementById("remark").value = name + " FAILED!";
+    }
+  }
+</script>
+
+</body>
+</html>
